@@ -1,62 +1,72 @@
 body {
   margin: 0;
   padding: 0;
-  background: #0f0f14; /* fundo escuro externo */
+  background: #0f0f14;
   font-family: Arial, sans-serif;
 }
 
+/* CARD PRINCIPAL */
 .home-container {
-  width: 75%;
+  width: 90%;
   max-width: 1200px;
   background: #ffffff;
   margin: 40px auto;
-  padding: 40px 40px 70px;
+  padding: 40px;
   border-radius: 8px;
 }
 
-.logo {
-  width: 120px;      
-  height: auto;      
-  position: 100px;
-  top: 30px;         
-  left: 0;              
-}
-
-.botao {
+/* TOPO: LOGO + BOTÃO */
+.topo {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
+
+  /* Alinhamento horizontal igual ao da imagem */
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
+/* LOGO */
+.logo {
+  width: 120px;
+  height: auto;
+}
+
+/* BOTÃO "CONECTAR" */
 .botao button {
   padding: 10px 25px;
   font-size: 18px;
   border: none;
-  background: #4eb7b0; 
+  background: #4eb7b0;
   color: #003d3a;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
 }
 
+/* IMAGEM PRINCIPAL */
 .imagem {
   width: 100%;
   height: 360px;
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 30px;
+
+  /* Mantém alinhado com topo */
+  margin-bottom: 40px;
 }
 
+/* ÁREA DE TEXTO + GALERIA */
 .conteudo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 40px;
   gap: 40px;
 }
 
+/* TEXTOS DA ESQUERDA */
 .textos {
-  flex: 1;  
+  flex: 1;
   max-width: 40%;
 }
 
@@ -74,10 +84,10 @@ body {
   color: #777;
   margin-top: 15px;
   line-height: 1.5;
-  text-align: left;
   max-width: 400px;
 }
 
+/* GALERIA DAS TRÊS IMAGENS */
 .galeria {
   flex: 1;
   display: flex;
@@ -97,4 +107,36 @@ body {
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
+}
+
+/* ------------------ RESPONSIVO ------------------ */
+
+@media (max-width: 900px) {
+  .conteudo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .textos {
+    max-width: 100%;
+  }
+
+  .galeria {
+    justify-content: center;
+  }
+
+  .galeria-item img {
+    width: 140px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    width: 90px;
+  }
+
+  .imagem {
+    height: 240px;
+  }
 }

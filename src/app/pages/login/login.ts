@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { InputComponent } from '../../shared/input/input';
 
 @Component({
   selector: 'app-login',
-  imports: [],
+  standalone: true,
   templateUrl: './login.html',
-  styleUrl: './login.css',
+  styleUrls: ['./login.css'],
+  imports: [InputComponent]
 })
-export class Login {
-
-}
+export class LoginComponent {}
