@@ -1,0 +1,98 @@
+/* Ocupa a tela toda e escurece o fundo */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.65); /* Fundo preto transparente */
+    z-index: 2000; /* Fica acima de tudo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Animação suave de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(1.1); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* A caixa branca */
+.modal-box {
+    background: #fff;
+    width: 90%;
+    max-width: 500px; /* Largura máxima */
+    height: 550px; /* Altura fixa ou min-height */
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeIn 0.2s ease-out;
+}
+
+/* Cabeçalho (Título + Botão Fechar) */
+.modal-header {
+    height: 45px;
+    border-bottom: 1px solid #dbdbdb;
+    display: flex;
+    justify-content: center; /* Centraliza o título */
+    align-items: center;
+    position: relative;
+}
+
+.modal-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d3b56;
+    margin: 0;
+}
+
+.btn-fechar {
+    position: absolute;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #1d3b56;
+}
+
+/* Corpo do Modal */
+.modal-body {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.upload-area {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.texto-instrucao {
+    font-size: 20px;
+    font-weight: 300;
+    color: #1d3b56;
+    margin: 0;
+}
+
+.btn-selecionar {
+    background-color: #239197; /* Verde/Azul da marca */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-selecionar:hover {
+    background-color: #1b7a7f;
+}

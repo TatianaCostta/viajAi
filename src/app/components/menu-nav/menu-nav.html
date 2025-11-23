@@ -29,11 +29,13 @@
                 <span class="icon">❤️</span> <span class="text">Notificações</span>
             </a>
         </li>
+        
         <li>
-            <a routerLink="/criar" class="criar-item">
+            <a class="criar-item" (click)="abrirModal()" style="cursor: pointer;">
                 <span class="icon">➕</span> <span class="text">Criar</span>
             </a>
         </li>
+
         <li>
             <a routerLink="/perfil" routerLinkActive="active">
                 <span class="icon">👤</span> <span class="text">Perfil</span>
@@ -46,4 +48,10 @@
             <span class="icon">☰</span> <span class="text">Mais</span>
         </a>
     </div>
+
+    <app-modal-criar-post 
+        *ngIf="mostrarModal" 
+        (fechar)="fecharModal()">
+    </app-modal-criar-post>
+
 </nav>
