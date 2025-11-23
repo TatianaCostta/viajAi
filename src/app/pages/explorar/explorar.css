@@ -1,0 +1,182 @@
+/* Fundo Geral Verde (Baseado no seu print) */
+.explorar-container {
+    background-color: #187b7b; /* Ajuste se o tom for diferente */
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- CABEÇALHO --- */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espalha: Voltar - Logo - Vazio */
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.btn-voltar {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.logo-top {
+    height: 40px; /* Ajuste o tamanho da logo aqui */
+    width: auto;
+}
+
+/* --- CONTEÚDO --- */
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.subtitulo {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* --- CARROSSEL --- */
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Botões de Navegação (< e >) */
+.nav-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    font-weight: bold;
+    font-family: monospace; /* Para a seta ficar bonita */
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Área dos Cards */
+.cards-view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    /* Isso garante que mostremos 3 cards lado a lado se a tela permitir */
+    max-width: 900px; 
+}
+
+/* --- ESTILO DO CARD --- */
+.card {
+    width: 260px;
+    height: 380px;
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    transition: all 0.3s ease;
+    
+    /* Estilo Padrão (Inativo - Laterais) */
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    opacity: 0.7; /* Levemente transparente */
+    transform: scale(0.9); /* Menorzinho */
+}
+
+/* Estilo ATIVO (O do meio) */
+.card.active {
+    background-color: #cfd8dc; /* Cinza claro/Branco do print */
+    border: none;
+    color: #1d3b56; /* Texto escuro */
+    opacity: 1;
+    transform: scale(1.05); /* Um pouco maior que os outros */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Esconde cards que não são o atual nem os vizinhos imediatos */
+.card.hidden {
+    display: none;
+}
+
+/* Avatar */
+.avatar-circle img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.card-name {
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: 800;
+}
+
+.card-bio {
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    flex: 1; /* Ocupa o espaço disponível */
+    display: flex;
+    align-items: center; /* Centraliza texto verticalmente */
+}
+
+/* Botão Seguir */
+.btn-seguir {
+    padding: 10px 40px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    background-color: rgba(255, 255, 255, 0.3); /* Padrão inativo */
+    color: white;
+}
+
+/* Botão Seguir no Card ATIVO */
+.card.active .btn-seguir {
+    background-color: #658c93; /* Tom esverdeado do print */
+    color: #ffffff;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    /* No celular, mostra só o card ativo */
+    .card {
+        display: none; 
+    }
+    .card.active {
+        display: flex; /* Mostra só o ativo */
+        width: 80vw;
+    }
+    .carousel-wrapper {
+        gap: 10px;
+    }
+}

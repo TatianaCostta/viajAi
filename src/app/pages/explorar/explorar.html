@@ -1,0 +1,44 @@
+<div class="explorar-container">
+    
+    <header class="top-bar">
+        <a routerLink="/perfil" class="btn-voltar">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" color="white"><path d="M15 18l-6-6 6-6"/></svg>
+        </a>
+        
+        <img src="assets/image.png" alt="Logo Viajaí" class="logo-top">
+        
+        <div style="width: 30px;"></div>
+    </header>
+
+    <div class="content">
+        <p class="subtitulo">Encontre perfis e faça novas conexões</p>
+
+        <div class="carousel-wrapper">
+            
+            <button class="nav-btn prev" (click)="prev()">
+                &lt;
+            </button>
+
+            <div class="cards-view">
+                <div class="card" 
+                     *ngFor="let perfil of perfis; let i = index"
+                     [class.active]="i === activeIndex"
+                     [class.hidden]="i < activeIndex - 1 || i > activeIndex + 1"> 
+                     <div class="avatar-circle">
+                        <img [src]="perfil.foto" [alt]="perfil.nome">
+                    </div>
+                    
+                    <h3 class="card-name">{{ perfil.nome }}</h3>
+                    <p class="card-bio">{{ perfil.bio }}</p>
+                    
+                    <button class="btn-seguir">Seguir</button>
+                </div>
+            </div>
+
+            <button class="nav-btn next" (click)="next()">
+                &gt;
+            </button>
+        </div>
+
+    </div>
+</div>
