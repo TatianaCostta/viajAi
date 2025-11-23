@@ -1,42 +1,40 @@
-body {
+/* Garante que a tela ocupe 100% da altura e remove barras de rolagem */
+body, html {
   margin: 0;
   padding: 0;
-  background: #0f0f14;
+  height: 100%;
+  overflow: hidden; /* O segredo para não rolar */
   font-family: Arial, sans-serif;
+  background: #0f0f14;
 }
 
-/* CARD PRINCIPAL */
 .home-container {
-  width: 90%;
-  max-width: 1200px;
+  height: 100vh; /* Ocupa 100% da viewport */
+  width: 100%;
+  box-sizing: border-box;
   background: #ffffff;
-  margin: 40px auto;
-  padding: 40px;
-  border-radius: 8px;
+  padding: 2vh 5vw; /* Padding que diminui em telas menores */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* TOPO: LOGO + BOTÃO */
+/* TOPO */
 .topo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-
-  /* Alinhamento horizontal igual ao da imagem */
-  padding-left: 0px;
-  padding-right: 0px;
+  height: 10vh;
 }
 
-/* LOGO */
 .logo {
-  width: 120px;
-  height: auto;
+  height: 6vh; /* Altura responsiva */
+  width: auto;
 }
 
-/* BOTÃO "CONECTAR" */
 .botao button {
-  padding: 10px 25px;
-  font-size: 18px;
+  padding: 1vh 2vw;
+  font-size: 2.2vh;
   border: none;
   background: #4eb7b0;
   color: #003d3a;
@@ -48,95 +46,79 @@ body {
 /* IMAGEM PRINCIPAL */
 .imagem {
   width: 100%;
-  height: 360px;
+  flex: 1; /* Estica para ocupar o espaço livre no meio */
   object-fit: cover;
   border-radius: 8px;
-
-  /* Mantém alinhado com topo */
-  margin-bottom: 40px;
+  margin: 2vh 0;
+  max-height: 55vh; /* Limite para não ficar gigante */
 }
 
-/* ÁREA DE TEXTO + GALERIA */
+/* CONTEÚDO INFERIOR */
 .conteudo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 40px;
+  height: 25vh;
+  gap: 2vw;
 }
 
-/* TEXTOS DA ESQUERDA */
 .textos {
   flex: 1;
-  max-width: 40%;
 }
 
 .titulo {
-  font-size: 32px;
+  font-size: 3.5vh;
   font-weight: 700;
   color: #1b425d;
-  line-height: 1.2;
-  margin: 0;
-  text-align: left;
+  line-height: 1.1;
+  margin: 0 0 1vh 0;
 }
 
 .texto {
-  font-size: 15px;
+  font-size: 1.8vh;
   color: #777;
-  margin-top: 15px;
-  line-height: 1.5;
-  max-width: 400px;
+  line-height: 1.3;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-/* GALERIA DAS TRÊS IMAGENS */
+/* GALERIA */
 .galeria {
   flex: 1;
   display: flex;
   justify-content: flex-end;
-  gap: 20px;
+  gap: 1vw;
+  height: 100%;
 }
 
 .galeria-item {
+  height: 90%; /* Um pouco menor que o container */
   background: #ffffff;
-  padding: 10px;
+  padding: 0.5vh;
   border-radius: 10px;
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  align-self: center;
 }
 
 .galeria-item img {
-  width: 180px;
-  height: 200px;
+  height: 100%;
+  width: auto;
   object-fit: cover;
   border-radius: 8px;
 }
 
-/* ------------------ RESPONSIVO ------------------ */
-
+/* RESPONSIVIDADE MOBILE */
 @media (max-width: 900px) {
   .conteudo {
-    flex-direction: column;
-    text-align: center;
+    display: none; /* Em telas muito pequenas, focamos na imagem principal */
   }
-
-  .textos {
-    max-width: 100%;
-  }
-
-  .galeria {
-    justify-content: center;
-  }
-
-  .galeria-item img {
-    width: 140px;
-    height: 160px;
-  }
-}
-
-@media (max-width: 600px) {
-  .logo {
-    width: 90px;
-  }
-
   .imagem {
-    height: 240px;
+    max-height: 70vh;
+  }
+  .home-container {
+      justify-content: flex-start;
   }
 }

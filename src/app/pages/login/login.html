@@ -7,18 +7,18 @@
     </div>
 
     <div class="form-box">
+        <div class="form-content">
+            <img src="image.png" class="logo" alt="Logo Viajaí">
 
-        <img src="image.png" class="logo">
+            <input type="text" class="campo-texto" placeholder="Email ou Telefone">
+            <input type="password" class="campo-texto" placeholder="Senha">
 
-        <app-input placeholder="Email ou Telefone"></app-input>
+            <button class="btn entrar" (click)="fazerLogin()">ENTRAR</button>
 
-        <app-input placeholder="Senha" type="password"></app-input>
+            <a class="esqueceu">ESQUECEU SUA SENHA?</a>
 
-        <button class="btn entrar">ENTRAR</button>
-
-        <a class="esqueceu">ESQUECEU SUA SENHA?</a>
-
-        <button class="btn criar">CRIAR CONTA</button>
+            <button class="btn criar">CRIAR CONTA</button>
+        </div>
     </div>
 
 </div>

@@ -1,2 +1,49 @@
-<p>menu-nav works!</p>
-<button (click)="criarPost()">+</button>
+<nav class="sidebar">
+    <div class="logo-area">
+        <h1 class="logo-text">ViajAí</h1>
+    </div>
+
+    <ul class="nav-links">
+        <li>
+            <a routerLink="/home" routerLinkActive="active">
+                <span class="icon">🏠</span> <span class="text">Página inicial</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/pesquisa" routerLinkActive="active">
+                <span class="icon">🔍</span> <span class="text">Pesquisa</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/explorar" routerLinkActive="active">
+                <span class="icon">🧭</span> <span class="text">Explorar</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/mensagens" routerLinkActive="active">
+                <span class="icon">✉️</span> <span class="text">Mensagens</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/notificacoes" routerLinkActive="active">
+                <span class="icon">❤️</span> <span class="text">Notificações</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/criar" class="criar-item">
+                <span class="icon">➕</span> <span class="text">Criar</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/perfil" routerLinkActive="active">
+                <span class="icon">👤</span> <span class="text">Perfil</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="menu-footer">
+        <a routerLink="/mais">
+            <span class="icon">☰</span> <span class="text">Mais</span>
+        </a>
+    </div>
+</nav>

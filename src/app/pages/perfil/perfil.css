@@ -1,0 +1,148 @@
+/* Container Geral para segurar o Menu e o Conteúdo */
+.layout-wrapper {
+    display: flex;
+    min-height: 100vh;
+    background-color: #fafafa; /* Fundo bem clarinho, padrão de redes sociais */
+}
+
+/* Área de conteúdo empurrada para direita */
+.content-area {
+    margin-left: 245px; /* Mesma largura do menu */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.profile-container {
+    max-width: 935px;
+    width: 100%;
+}
+
+/* HEADER */
+.profile-header {
+    display: flex;
+    margin-bottom: 45px;
+    align-items: flex-start;
+}
+
+.avatar-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+.avatar-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #dbdbdb;
+    background: #eee; /* cor de fundo caso a imagem falhe */
+}
+
+.profile-info {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Topo: Nome + Botão */
+.info-topo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.username {
+    font-size: 28px;
+    font-weight: 300;
+    color: #1d3b56; /* Azul escuro do CSS de Login */
+    margin: 0;
+}
+
+.btn-editar {
+    background: transparent;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    padding: 5px 12px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1d3b56;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Stats */
+.info-stats {
+    display: flex;
+    gap: 40px;
+    font-size: 16px;
+    color: #1d3b56;
+}
+
+/* Bio */
+.fullname {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    color: #1d3b56;
+}
+
+.info-bio p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    color: #1d3b56;
+}
+
+/* TABS (Divisor) */
+.profile-tabs {
+    border-top: 1px solid #dbdbdb;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding-top: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #8e8e8e;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.tab.active {
+    border-top: 1px solid #262626; /* Tarja preta ativa */
+    color: #262626;
+    margin-top: -1px;
+}
+
+/* GRID DE FOTOS */
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 28px; /* Espaço entre fotos */
+}
+
+.photo-card {
+    background-color: #ddd; /* Placeholder cinza */
+    aspect-ratio: 1 / 1; /* Quadrado perfeito */
+    position: relative;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.photo-card:hover {
+    opacity: 0.8;
+}

@@ -1,0 +1,75 @@
+/* Container da Barra Lateral */
+.sidebar {
+    width: 245px;
+    height: 100vh;
+    background-color: #ffffff;
+    border-right: 1px solid #dbdbdb;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 15px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo (Estilo texto para combinar com o app) */
+.logo-area {
+    margin-bottom: 35px;
+    padding-left: 10px;
+}
+
+.logo-text {
+    font-family: 'Arial', sans-serif; /* Mesma fonte do body */
+    color: #239197; /* Cor do botão de Login */
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+/* Links */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+.nav-links li {
+    margin-bottom: 8px;
+}
+
+.nav-links a, .menu-footer a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #1d3b56; /* Cor dos textos do Login */
+    padding: 12px;
+    border-radius: 8px; /* Radius consistente com inputs */
+    font-size: 16px;
+    transition: 0.2s ease;
+}
+
+.nav-links a:hover, .menu-footer a:hover {
+    background-color: #f2f2f2;
+}
+
+/* Link Ativo (Página Atual) */
+.nav-links a.active {
+    font-weight: bold;
+    color: #239197; /* Destaque na cor da marca */
+}
+
+/* Ícones */
+.icon {
+    margin-right: 16px;
+    font-size: 22px;
+    width: 24px;
+    text-align: center;
+}
+
+/* Ajuste específico para o item 'Criar' se quiser destacar */
+.criar-item {
+    font-weight: bold;
+}
