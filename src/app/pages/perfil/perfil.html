@@ -3,23 +3,19 @@
     <app-menu-nav></app-menu-nav>
 
     <main class="content-area">
-        
-        <div class="settings-icon">
-            ⚙️
-        </div>
+        <div class="settings-icon">⚙️</div>
 
         <div class="profile-container">
             
             <header class="profile-header">
-                
                 <div class="header-top">
                     <div class="avatar-wrapper">
-                        <img src="perfil_henricordilheiras.jpg" alt="Foto de Perfil" class="avatar-img">
+                        <img src="perfil_henricordilheiras.jpg" alt="Foto" class="avatar-img">
                     </div>
 
                     <div class="profile-text">
-                        <h2 class="username">henrifiora</h2>
-                        <h3 class="fullname">Henrique Fioravante</h3>
+                        <h2 class="username">{{ usuario }}</h2>
+                        <h3 class="fullname">{{ nome }}</h3>
 
                         <div class="info-stats">
                             <span><strong>4</strong> posts</span>
@@ -28,43 +24,50 @@
                         </div>
 
                         <div class="info-bio">
-                            <p>✈️ Viajante por paixão, não por ostentação</p>
-                            <p>🌱 Viajar é crescer - e pode ser acessível</p>
-                            <p>📍 Culturas, conexões e caminhos reais</p>
+                            <p>{{ bio1 }}</p>
+                            <p>{{ bio2 }}</p>
+                            <p>{{ bio3 }}</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="actions">
-                        <button class="btn-glass">Editar perfil</button>
-                        
-                        <button class="btn-glass" (click)="compartilharPerfil()">
-                            Compartilhar perfil
-                        </button>
-                    </div>
-
+                    <button class="btn-glass" (click)="abrirEdicao()">Editar perfil</button>
+                    <button class="btn-glass" (click)="compartilharPerfil()">Compartilhar perfil</button>
+                </div>
             </header>
 
             <div class="photos-grid">
-                
-                <div class="photo-card">
-                    <img src="henridubai.jpg" alt="Postagem Dubai">
-                </div>
-
-                <div class="photo-card">
-                    <img src="henriatacama.jpg" alt="Postagem Atacama">
-                </div>
-
-                <div class="photo-card">
-                    <img src="henrilasvegas.jpg" alt="Postagem Las Vegas">
-                </div>
-
-                <div class="photo-card">
-                    <img src="henriportugal.jpg" alt="Postagem Portugal">
-                </div>
-
+                <div class="photo-card"><img src="henridubai.jpg"></div>
+                <div class="photo-card"><img src="henriatacama.jpg"></div>
+                <div class="photo-card"><img src="henrilasvegas.jpg"></div>
+                <div class="photo-card"><img src="henriportugal.jpg"></div>
             </div>
 
         </div>
     </main>
+
+    <div class="modal-overlay" *ngIf="modalAberto">
+        <div class="modal-content">
+            <h3>Editar Perfil</h3>
+            
+            <label>Nome de Usuário</label>
+            <input type="text" [(ngModel)]="usuario" class="input-edit">
+            
+            <label>Nome Completo</label>
+            <input type="text" [(ngModel)]="nome" class="input-edit">
+            
+            <label>Bio (Linha 1)</label>
+            <input type="text" [(ngModel)]="bio1" class="input-edit">
+            
+            <label>Bio (Linha 2)</label>
+            <input type="text" [(ngModel)]="bio2" class="input-edit">
+
+            <label>Bio (Linha 3)</label>
+            <input type="text" [(ngModel)]="bio3" class="input-edit">
+
+            <button class="btn-salvar" (click)="salvarEdicao()">Salvar Alterações</button>
+        </div>
+    </div>
+
 </div>
