@@ -163,23 +163,33 @@
 .photos-grid {
   width: 100%;
   display: grid;
-  /* 4 Colunas exatas */
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 4px; /* Gap bem pequeno (colado) */
+  grid-template-columns: repeat(4, 1fr); /* 4 Colunas */
+  gap: 4px; /* Espaço pequeno */
 }
 
+/* O Cartão (Container da foto) */
 .photo-card {
-  background-color: rgba(0,0,0,0.1);
-  /* Formato Retrato (Vertical) igual ao print */
-  aspect-ratio: 3 / 4; 
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  aspect-ratio: 3 / 4; /* Formato Retrato (Vertical) */
+  overflow: hidden;    /* Esconde o que passar da borda */
+  background-color: rgba(0,0,0,0.2); /* Fundo cinza enquanto carrega */
   cursor: pointer;
-  transition: opacity 0.2s;
+  border-radius: 4px;
 }
 
-.photo-card:hover {
-  opacity: 0.8;
+/* A Imagem em si */
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* O segredo: corta a foto para preencher sem esticar */
+  display: block;    /* Remove espaços extras */
+  transition: transform 0.3s ease;
+}
+
+/* Efeito de Zoom ao passar o mouse */
+.photo-card:hover img {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 /* --- RESPONSIVIDADE (Mobile) --- */

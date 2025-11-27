@@ -1,3 +1,6 @@
+/* 1. GARANTINDO AS FONTES PADRÃO (Igual às outras páginas) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;600;700&display=swap');
+
 /* Ocupa a tela toda e escurece o fundo */
 .overlay {
     position: fixed;
@@ -5,25 +8,19 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.65); /* Fundo preto transparente */
-    z-index: 2000; /* Fica acima de tudo */
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 2000;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Inter', sans-serif; /* Fonte padrão do corpo */
 }
 
-/* Animação suave de entrada */
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(1.1); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-/* A caixa branca */
 .modal-box {
     background: #fff;
     width: 90%;
-    max-width: 500px; /* Largura máxima */
-    height: 550px; /* Altura fixa ou min-height */
+    max-width: 500px;
+    min-height: 500px;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
@@ -31,12 +28,17 @@
     animation: fadeIn 0.2s ease-out;
 }
 
-/* Cabeçalho (Título + Botão Fechar) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(1.1); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* CABEÇALHO DO MODAL */
 .modal-header {
     height: 45px;
     border-bottom: 1px solid #dbdbdb;
     display: flex;
-    justify-content: center; /* Centraliza o título */
+    justify-content: center;
     align-items: center;
     position: relative;
 }
@@ -44,8 +46,11 @@
 .modal-header h3 {
     font-size: 16px;
     font-weight: 600;
-    color: #1d3b56;
+    color: #1d3b56; /* Azul escuro padrão */
     margin: 0;
+    
+    /* FONTE TÍTULO: Poppins */
+    font-family: 'Poppins', sans-serif;
 }
 
 .btn-fechar {
@@ -58,7 +63,6 @@
     color: #1d3b56;
 }
 
-/* Corpo do Modal */
 .modal-body {
     flex: 1;
     display: flex;
@@ -75,22 +79,39 @@
     gap: 20px;
 }
 
-.texto-instrucao {
-    font-size: 20px;
-    font-weight: 300;
-    color: #1d3b56;
-    margin: 0;
+/* Imagem central */
+.icon-midia img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
 }
 
+/* Texto de instrução */
+.texto-instrucao {
+    font-size: 20px;
+    font-weight: 300; /* Light */
+    color: #1d3b56;
+    margin: 0;
+    
+    /* FONTE TEXTO: Inter */
+    font-family: 'Inter', sans-serif;
+}
+
+/* BOTÃO AZUL/VERDE */
 .btn-selecionar {
-    background-color: #239197; /* Verde/Azul da marca */
+    /* Cor padrão do site */
+    background-color: #239197; 
     color: white;
     border: none;
-    padding: 8px 16px;
+    padding: 10px 20px;
     border-radius: 4px;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
+    
+    /* FONTE BOTÃO: Inter */
+    font-family: 'Inter', sans-serif;
+    transition: background 0.3s;
 }
 
 .btn-selecionar:hover {

@@ -1,8 +1,11 @@
-/* Fundo Geral Verde (Baseado no seu print) */
+/* 1. IMPORTAÇÃO DAS FONTES PADRÃO */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;600;700&display=swap');
+
+/* Fundo Geral Verde (Cor Padrão Unificada) */
 .explorar-container {
-    background-color: #187b7b; /* Ajuste se o tom for diferente */
+    background-color: #1d6f72; /* Mesma cor do Perfil/Menu */
     min-height: 100vh;
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif; /* Fonte padrão */
     padding: 20px;
     box-sizing: border-box;
     display: flex;
@@ -13,7 +16,7 @@
 .top-bar {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Espalha: Voltar - Logo - Vazio */
+    justify-content: space-between;
     margin-bottom: 20px;
     padding: 0 10px;
 }
@@ -22,10 +25,11 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    color: white; /* Garante que a seta fique branca */
 }
 
 .logo-top {
-    height: 40px; /* Ajuste o tamanho da logo aqui */
+    height: 45px; /* Ajuste leve de tamanho */
     width: auto;
 }
 
@@ -43,7 +47,8 @@
     font-size: 18px;
     margin-bottom: 40px;
     text-align: center;
-    font-weight: bold;
+    font-weight: 600; /* Inter Semi-Bold */
+    letter-spacing: 0.5px;
 }
 
 /* --- CARROSSEL --- */
@@ -60,7 +65,7 @@
     background-color: rgba(255, 255, 255, 0.2);
     border: none;
     color: white;
-    font-size: 30px;
+    font-size: 24px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -70,7 +75,7 @@
     justify-content: center;
     transition: 0.3s;
     font-weight: bold;
-    font-family: monospace; /* Para a seta ficar bonita */
+    font-family: 'Poppins', sans-serif; /* Fonte mais bonita para a seta */
 }
 
 .nav-btn:hover {
@@ -83,7 +88,6 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    /* Isso garante que mostremos 3 cards lado a lado se a tela permitir */
     max-width: 900px; 
 }
 
@@ -100,83 +104,93 @@
     text-align: center;
     transition: all 0.3s ease;
     
-    /* Estilo Padrão (Inativo - Laterais) */
+    /* Estilo Padrão (Inativo) */
     background-color: transparent;
-    border: 2px solid #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Borda mais suave */
     color: #ffffff;
-    opacity: 0.7; /* Levemente transparente */
-    transform: scale(0.9); /* Menorzinho */
+    opacity: 0.7;
+    transform: scale(0.9);
 }
 
 /* Estilo ATIVO (O do meio) */
 .card.active {
-    background-color: #cfd8dc; /* Cinza claro/Branco do print */
+    background-color: #f0f4f5; /* Fundo quase branco */
     border: none;
-    color: #1d3b56; /* Texto escuro */
+    color: #1d3b56; /* Texto escuro padrão */
     opacity: 1;
-    transform: scale(1.05); /* Um pouco maior que os outros */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
-/* Esconde cards que não são o atual nem os vizinhos imediatos */
 .card.hidden {
     display: none;
 }
 
 /* Avatar */
 .avatar-circle img {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .card-name {
-    font-size: 20px;
-    margin: 10px 0;
-    font-weight: 800;
+    font-family: 'Poppins', sans-serif; /* Nome em Poppins */
+    font-size: 22px;
+    margin: 5px 0 10px 0;
+    font-weight: 700;
 }
 
 .card-bio {
-    font-size: 13px;
-    line-height: 1.4;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
     margin-bottom: 20px;
-    flex: 1; /* Ocupa o espaço disponível */
+    flex: 1;
     display: flex;
-    align-items: center; /* Centraliza texto verticalmente */
+    align-items: center;
+    justify-content: center;
 }
 
 /* Botão Seguir */
 .btn-seguir {
-    padding: 10px 40px;
-    border-radius: 6px;
+    padding: 12px 40px;
+    border-radius: 8px;
     border: none;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
     transition: 0.2s;
-    background-color: rgba(255, 255, 255, 0.3); /* Padrão inativo */
+    background-color: rgba(255, 255, 255, 0.2);
     color: white;
+    font-family: 'Inter', sans-serif;
 }
 
 /* Botão Seguir no Card ATIVO */
 .card.active .btn-seguir {
-    background-color: #658c93; /* Tom esverdeado do print */
+    background-color: #1d6f72; /* Botão volta a ser Verde Petróleo no card branco */
     color: #ffffff;
+}
+
+.card.active .btn-seguir:hover {
+    background-color: #165a5d;
 }
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
-    /* No celular, mostra só o card ativo */
     .card {
         display: none; 
     }
     .card.active {
-        display: flex; /* Mostra só o ativo */
+        display: flex;
         width: 80vw;
     }
     .carousel-wrapper {
         gap: 10px;
+    }
+    .logo-top {
+        height: 35px;
     }
 }
