@@ -1,124 +1,172 @@
-/* Garante que a tela ocupe 100% da altura e remove barras de rolagem */
+/* 1. IMPORTAÇÃO DAS FONTES (Poppins e Inter) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700;800&display=swap');
+
+/* RESET GERAL - TELA CHEIA SEM ROLAGEM */
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden; /* O segredo para não rolar */
-  font-family: Arial, sans-serif;
-  background: #0f0f14;
+  width: 100%;
+  overflow: hidden; /* Remove barra de rolagem */
+  background-color: #fcfcfc; /* Fundo off-white suave */
+  font-family: 'Inter', sans-serif; /* Fonte padrão */
+  -webkit-font-smoothing: antialiased;
 }
 
+/* CONTAINER PRINCIPAL */
 .home-container {
-  height: 100vh; /* Ocupa 100% da viewport */
+  height: 100vh; /* Ocupa 100% da altura da tela */
   width: 100%;
+  max-width: 1400px;
+  margin: 0 auto; /* Centraliza na tela */
+  padding: 2vh 4vw; /* Margem interna */
   box-sizing: border-box;
-  background: #ffffff;
-  padding: 2vh 5vw; /* Padding que diminui em telas menores */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
-/* TOPO */
+/* --- TOPO (Logo e Botão) --- */
 .topo {
+  height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 10vh;
+  padding-bottom: 1vh;
 }
 
 .logo {
-  height: 6vh; /* Altura responsiva */
+  height: 65px;
   width: auto;
 }
 
 .botao button {
-  padding: 1vh 2vw;
-  font-size: 2.2vh;
+  font-family: 'Inter', sans-serif;
+  background-color: #239197; /* Verde Petróleo */
+  color: white;
   border: none;
-  background: #4eb7b0;
-  color: #003d3a;
-  border-radius: 8px;
+  padding: 12px 35px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  font-weight: bold;
+  transition: background 0.3s;
 }
 
-/* IMAGEM PRINCIPAL */
+.botao button:hover {
+  background-color: #1b7a7f; 
+}
+
+/* --- IMAGEM PRINCIPAL (Rio de Janeiro) --- */
+/* --- IMAGEM PRINCIPAL (Rio de Janeiro) --- */
 .imagem {
+  display: block;
   width: 100%;
-  flex: 1; /* Estica para ocupar o espaço livre no meio */
+  height: 42vh;
   object-fit: cover;
-  border-radius: 8px;
-  margin: 2vh 0;
-  max-height: 55vh; /* Limite para não ficar gigante */
+  
+  /* O SEGREDO ESTÁ AQUI: */
+  /* Isso diz: "Centralize horizontalmente, mas mostre o topo (20%) verticalmente" */
+  object-position: center 40%; 
+  
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-/* CONTEÚDO INFERIOR */
+/* --- ÁREA INFERIOR (Texto + Galeria) --- */
 .conteudo {
+  flex: 1; /* Ocupa o resto da tela */
   display: flex;
+  align-items: center; /* Centraliza verticalmente */
   justify-content: space-between;
-  align-items: center;
-  height: 25vh;
-  gap: 2vw;
+  gap: 4vw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
 }
 
+/* BLOCO DE TEXTO */
 .textos {
-  flex: 1;
+  flex: 1; /* Divide o espaço igualmente com a galeria */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .titulo {
-  font-size: 3.5vh;
-  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
   color: #1b425d;
+  
+  /* TAMANHO DA FONTE (Grande e Fixo) */
+  font-size: 48px; 
+  
+  font-weight: 700;
   line-height: 1.1;
-  margin: 0 0 1vh 0;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+  width: 100%;
 }
 
 .texto {
-  font-size: 1.8vh;
-  color: #777;
-  line-height: 1.3;
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  color: #666;
+  
+  /* TAMANHO DA FONTE (Legível) */
+  font-size: 18px; 
+  
+  font-weight: 400;
+  line-height: 1.6;
+  width: 100%;
+  
+  /* Limite de largura para quebrar em 3 linhas igual à referência */
+  max-width: 550px; 
+  
+  margin: 0 auto;
 }
 
-/* GALERIA */
+/* GALERIA DE FOTOS */
 .galeria {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  gap: 1vw;
+  flex: 1.2; /* A galeria ocupa um pouco mais de espaço horizontal que o texto */
   height: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5vw;
 }
 
 .galeria-item {
-  height: 90%; /* Um pouco menor que o container */
-  background: #ffffff;
-  padding: 0.5vh;
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  align-self: center;
+  flex: 1;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
 }
 
 .galeria-item img {
+  width: 100%;
   height: 100%;
-  width: auto;
-  object-fit: cover;
+  object-fit: cover; /* Garante o corte perfeito das fotos */
+  transition: transform 0.3s ease;
   border-radius: 8px;
 }
 
-/* RESPONSIVIDADE MOBILE */
+.galeria-item img:hover {
+  transform: scale(1.05); /* Zoom suave ao passar o mouse */
+}
+
+/* --- RESPONSIVIDADE --- */
+
+/* Ajuste para telas menores (Notebooks) */
+@media (max-height: 700px) {
+  .titulo { font-size: 36px; } /* Diminui um pouco se a tela for baixa */
+  .texto { font-size: 16px; }
+  .imagem { height: 38vh; }
+}
+
+/* Ajuste para Celulares */
 @media (max-width: 900px) {
-  .conteudo {
-    display: none; /* Em telas muito pequenas, focamos na imagem principal */
-  }
-  .imagem {
-    max-height: 70vh;
-  }
-  .home-container {
-      justify-content: flex-start;
-  }
+  .home-container { height: auto; overflow: auto; } /* Libera rolagem no celular */
+  .conteudo { flex-direction: column; padding-bottom: 40px; }
+  .textos { margin-bottom: 30px; }
+  .galeria { width: 100%; height: 200px; }
+  .imagem { height: 250px; }
 }

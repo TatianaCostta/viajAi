@@ -1,148 +1,208 @@
-/* Container Geral para segurar o Menu e o Conteúdo */
+/* 1. IMPORTAÇÃO DAS FONTES PADRÃO */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;600;700&display=swap');
+
+/* Fundo Geral */
 .layout-wrapper {
-    display: flex;
-    min-height: 100vh;
-    background-color: #fafafa; /* Fundo bem clarinho, padrão de redes sociais */
+  display: flex;
+  min-height: 100vh;
+  background-color: #1d6f72; /* Verde Petróleo (Cor exata) */
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
 }
 
-/* Área de conteúdo empurrada para direita */
+/* Área de Conteúdo */
 .content-area {
-    margin-left: 245px; /* Mesma largura do menu */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 30px;
+  margin-left: 245px; /* Espaço do menu lateral */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  position: relative; /* Para posicionar a engrenagem */
 }
 
+/* Ícone de Engrenagem (Canto Superior Direito) */
+.settings-icon {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 28px;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: transform 0.3s;
+}
+
+.settings-icon:hover {
+  transform: rotate(90deg); /* Efeito charmoso ao passar o mouse */
+}
+
+/* Container Central */
 .profile-container {
-    max-width: 935px;
-    width: 100%;
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* HEADER */
+/* --- HEADER DO PERFIL --- */
 .profile-header {
-    display: flex;
-    margin-bottom: 45px;
-    align-items: flex-start;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 40px;
 }
 
+/* Bloco Superior: Foto + Texto */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza o bloco na tela */
+  gap: 30px;
+  text-align: left;
+  width: 100%;
+}
+
+/* --- CORREÇÃO DA FOTO (CÍRCULO PERFEITO) --- */
 .avatar-wrapper {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    margin-right: 30px;
+  /* Impede que o flexbox esmague a foto */
+  flex-shrink: 0; 
+  flex-grow: 0;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .avatar-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid #dbdbdb;
-    background: #eee; /* cor de fundo caso a imagem falhe */
+  width: 160px;
+  height: 160px;
+  
+  /* TRAVAS DE SEGURANÇA para manter o círculo */
+  min-width: 160px;
+  min-height: 160px;
+  
+  border-radius: 50%; /* Círculo */
+  object-fit: cover;  /* Corta a imagem para preencher */
+  
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background-color: #fff;
 }
 
-.profile-info {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* Topo: Nome + Botão */
-.info-topo {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+/* Informações de Texto */
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1; /* O texto pode ocupar o espaço restante */
+  max-width: 600px;
 }
 
 .username {
-    font-size: 28px;
-    font-weight: 300;
-    color: #1d3b56; /* Azul escuro do CSS de Login */
-    margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
 }
 
-.btn-editar {
-    background: transparent;
-    border: 1px solid #dbdbdb;
-    border-radius: 4px;
-    padding: 5px 12px;
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 14px;
-    color: #1d3b56;
-}
-
-.btn-icon {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
+.fullname {
+  font-size: 18px;
+  font-weight: 500;
+  color: #e0e0e0;
+  margin-bottom: 10px;
 }
 
 /* Stats */
 .info-stats {
-    display: flex;
-    gap: 40px;
-    font-size: 16px;
-    color: #1d3b56;
+  display: flex;
+  gap: 25px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 /* Bio */
-.fullname {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0 0 5px 0;
-    color: #1d3b56;
-}
-
 .info-bio p {
-    font-size: 14px;
-    line-height: 1.5;
-    margin: 0;
-    color: #1d3b56;
+  font-size: 14px;
+  margin: 3px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* TABS (Divisor) */
-.profile-tabs {
-    border-top: 1px solid #dbdbdb;
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    margin-bottom: 20px;
+/* --- BOTÕES (Estilo Vidro) --- */
+.actions {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10px;
 }
 
-.tab {
-    padding-top: 15px;
-    font-size: 12px;
-    font-weight: bold;
-    color: #8e8e8e;
-    letter-spacing: 1px;
-    cursor: pointer;
+.btn-glass {
+  flex: 1;
+  max-width: 300px;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  color: white;
+  padding: 12px 0;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Inter', sans-serif;
 }
 
-.tab.active {
-    border-top: 1px solid #262626; /* Tarja preta ativa */
-    color: #262626;
-    margin-top: -1px;
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.4);
 }
 
-/* GRID DE FOTOS */
+/* --- GRID FOTOS --- */
 .photos-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
-    gap: 28px; /* Espaço entre fotos */
+  width: 100%;
+  display: grid;
+  /* 4 Colunas exatas */
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 4px; /* Gap bem pequeno (colado) */
 }
 
 .photo-card {
-    background-color: #ddd; /* Placeholder cinza */
-    aspect-ratio: 1 / 1; /* Quadrado perfeito */
-    position: relative;
-    cursor: pointer;
-    transition: opacity 0.2s;
+  background-color: rgba(0,0,0,0.1);
+  /* Formato Retrato (Vertical) igual ao print */
+  aspect-ratio: 3 / 4; 
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: opacity 0.2s;
 }
 
 .photo-card:hover {
-    opacity: 0.8;
+  opacity: 0.8;
+}
+
+/* --- RESPONSIVIDADE (Mobile) --- */
+@media (max-width: 768px) {
+  .header-top {
+    flex-direction: column; /* Empilha foto e texto no celular */
+    text-align: center;
+  }
+  
+  .info-stats {
+    justify-content: center;
+  }
+  
+  .info-bio p {
+    justify-content: center;
+  }
+  
+  .photos-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas no celular */
+  }
+  
+  .content-area {
+    margin-left: 0;
+    padding: 20px;
+  }
 }

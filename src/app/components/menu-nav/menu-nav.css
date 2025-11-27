@@ -2,30 +2,32 @@
 .sidebar {
     width: 245px;
     height: 100vh;
-    background-color: #ffffff;
-    border-right: 1px solid #dbdbdb;
+    background-color: #1d6f72; /* Verde Petróleo */
+    border-right: 1px solid rgba(0, 0, 0, 0.1); 
     display: flex;
     flex-direction: column;
-    padding: 25px 15px;
+    padding: 25px 15px 40px 15px; 
     position: fixed;
     left: 0;
     top: 0;
     z-index: 1000;
+    box-sizing: border-box;
 }
 
-/* Logo (Estilo texto para combinar com o app) */
+/* Área da Logo */
 .logo-area {
     margin-bottom: 35px;
     padding-left: 10px;
 }
 
-.logo-text {
-    font-family: 'Arial', sans-serif; /* Mesma fonte do body */
-    color: #239197; /* Cor do botão de Login */
-    font-size: 28px;
-    font-weight: bold;
-    margin: 0;
-    letter-spacing: -1px;
+/* ESTILO DA LOGO */
+.logo-menu {
+    width: 140px;
+    height: auto;
+    display: block;
+    
+    /* REMOVIDO O FILTRO: Agora a imagem aparece na cor original */
+    /* filter: brightness(0) invert(1); */
 }
 
 /* Links */
@@ -44,32 +46,31 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #1d3b56; /* Cor dos textos do Login */
+    color: #ffffff;
     padding: 12px;
-    border-radius: 8px; /* Radius consistente com inputs */
+    border-radius: 8px;
     font-size: 16px;
     transition: 0.2s ease;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
 }
 
 .nav-links a:hover, .menu-footer a:hover {
-    background-color: #f2f2f2;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Link Ativo (Página Atual) */
 .nav-links a.active {
-    font-weight: bold;
-    color: #239197; /* Destaque na cor da marca */
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: 700;
 }
 
-/* Ícones */
+.menu-footer {
+    margin-bottom: 20px; 
+}
+
 .icon {
     margin-right: 16px;
     font-size: 22px;
     width: 24px;
     text-align: center;
-}
-
-/* Ajuste específico para o item 'Criar' se quiser destacar */
-.criar-item {
-    font-weight: bold;
 }
