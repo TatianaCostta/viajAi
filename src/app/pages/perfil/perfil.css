@@ -5,22 +5,22 @@
 .layout-wrapper {
   display: flex;
   min-height: 100vh;
-  background-color: #1d6f72; /* Verde Petróleo (Cor exata) */
+  background-color: #1d6f72; /* Verde Petróleo */
   font-family: 'Inter', sans-serif;
   color: #ffffff;
 }
 
 /* Área de Conteúdo */
 .content-area {
-  margin-left: 245px; /* Espaço do menu lateral */
+  margin-left: 245px;
   width: 100%;
   display: flex;
   justify-content: center;
   padding: 40px;
-  position: relative; /* Para posicionar a engrenagem */
+  position: relative;
 }
 
-/* Ícone de Engrenagem (Canto Superior Direito) */
+/* Ícone de Engrenagem */
 .settings-icon {
   position: absolute;
   top: 30px;
@@ -35,7 +35,6 @@
   transform: rotate(90deg);
 }
 
-/* Container Central */
 .profile-container {
   max-width: 900px;
   width: 100%;
@@ -54,7 +53,6 @@
   margin-bottom: 40px;
 }
 
-/* Bloco Superior: Foto + Texto */
 .header-top {
   display: flex;
   align-items: center;
@@ -64,7 +62,7 @@
   width: 100%;
 }
 
-/* --- CORREÇÃO DA FOTO (CÍRCULO PERFEITO) --- */
+/* Avatar com proteção de tamanho */
 .avatar-wrapper {
   flex-shrink: 0; 
   flex-grow: 0;
@@ -84,7 +82,7 @@
   background-color: #fff;
 }
 
-/* Informações de Texto */
+/* Texto do Perfil */
 .profile-text {
   display: flex;
   flex-direction: column;
@@ -108,7 +106,6 @@
   margin-bottom: 10px;
 }
 
-/* Stats */
 .info-stats {
   display: flex;
   gap: 25px;
@@ -116,7 +113,6 @@
   margin-bottom: 10px;
 }
 
-/* Bio */
 .info-bio p {
   font-size: 14px;
   margin: 3px 0;
@@ -125,7 +121,7 @@
   gap: 8px;
 }
 
-/* --- BOTÕES (Estilo Vidro) --- */
+/* Botões Vidro */
 .actions {
   display: flex;
   gap: 20px;
@@ -153,17 +149,17 @@
   background: rgba(255, 255, 255, 0.4);
 }
 
-/* --- GRID FOTOS --- */
+/* Grid de Fotos */
 .photos-grid {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 Colunas */
+  grid-template-columns: repeat(4, 1fr);
   gap: 4px;
 }
 
 .photo-card {
   position: relative;
-  aspect-ratio: 3 / 4; /* Retrato */
+  aspect-ratio: 3 / 4;
   overflow: hidden;
   background-color: rgba(0,0,0,0.2);
   cursor: pointer;
@@ -183,14 +179,14 @@
   opacity: 0.9;
 }
 
-/* === ESTILO DO NOVO MODAL DE EDIÇÃO === */
+/* === MODAL DE EDIÇÃO === */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.7); /* Fundo escuro atrás */
+    background: rgba(0, 0, 0, 0.7);
     z-index: 2000;
     display: flex;
     justify-content: center;
@@ -205,10 +201,11 @@
     max-width: 400px;
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espaço entre os campos */
-    color: #1d3b56; /* Texto escuro dentro do modal */
+    gap: 15px;
+    color: #1d3b56;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     animation: fadeIn 0.2s ease-out;
+    position: relative; /* Importante para o botão X */
 }
 
 @keyframes fadeIn {
@@ -216,19 +213,38 @@
     to { opacity: 1; transform: scale(1); }
 }
 
+/* NOVO: BOTÃO X DE FECHAR */
+.btn-fechar-x {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1d3b56;
+    cursor: pointer;
+    line-height: 1;
+    padding: 5px;
+}
+
+.btn-fechar-x:hover {
+    color: #ff4444; /* Vermelho no hover */
+}
+
 .modal-content h3 {
     margin-top: 0;
     color: #1d3b56;
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .modal-content label {
     font-size: 13px;
     font-weight: 600;
     color: #555;
-    margin-bottom: -10px; /* Cola a label no input */
+    margin-bottom: -10px;
 }
 
 .input-edit {
@@ -261,21 +277,15 @@
     background-color: #1b7a7f;
 }
 
-/* --- RESPONSIVIDADE (Mobile) --- */
+/* Responsividade Mobile */
 @media (max-width: 768px) {
   .header-top {
     flex-direction: column;
     text-align: center;
   }
-  
-  .info-stats {
-    justify-content: center;
-  }
-  
   .photos-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
   .content-area {
     margin-left: 0;
     padding: 20px;
