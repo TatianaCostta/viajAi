@@ -1,4 +1,4 @@
-/* 1. IMPORTAÇÃO DAS FONTES */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700;800&display=swap');
 
 body, html {
@@ -19,7 +19,6 @@ body, html {
   overflow: hidden;
 }
 
-/* --- LADO ESQUERDO (Imagens) --- */
 .imagens {
   width: 50%;
   height: 100%;
@@ -61,7 +60,6 @@ body, html {
   z-index: 3;
 }
 
-/* --- LADO DIREITO (Formulário) --- */
 .form-box {
   width: 50%;
   height: 100%;
@@ -88,7 +86,7 @@ body, html {
   align-self: center;
 }
 
-/* --- INPUTS --- */
+
 .campo-texto {
   width: 100%;
   height: 7vh;
@@ -106,10 +104,10 @@ body, html {
 }
 
 .campo-texto:focus {
-  border-color: #239197; /* Borda verde ao clicar */
+  border-color: #239197;
 }
 
-/* --- BOTÕES PADRÃO --- */
+
 .btn {
   width: 100%;
   height: 7vh;
@@ -118,27 +116,26 @@ body, html {
   border-radius: 6px;
   
   font-family: 'Inter', sans-serif;
-  font-weight: 600; /* Semi-Bold */
+  font-weight: 600; 
   font-size: 16px;
   
   cursor: pointer;
   transition: background 0.3s;
   
-  /* COR OFICIAL IGUAL AO BOTÃO CONECTAR */
+  
   background: #239197; 
   color: #ffffff;
 }
 
 .btn:hover {
-  /* EFEITO HOVER IGUAL AO BOTÃO CONECTAR */
+
   background: #1b7a7f;
 }
 
-/* Caso queira diferenciar classes específicas, mas ambas usam a mesma base acima */
 .entrar { }
 .criar { }
 
-/* --- LINK ESQUECEU SENHA --- */
+
 .esqueceu {
   text-align: center;
   font-family: 'Inter', sans-serif;

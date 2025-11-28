@@ -1,7 +1,7 @@
-/* 1. GARANTINDO AS FONTES PADRÃO (Igual às outras páginas) */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;600;700&display=swap');
 
-/* Ocupa a tela toda e escurece o fundo */
+
 .overlay {
     position: fixed;
     top: 0;
@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Inter', sans-serif; /* Fonte padrão do corpo */
+    font-family: 'Inter', sans-serif; 
 }
 
 .modal-box {
@@ -33,7 +33,7 @@
     to { opacity: 1; transform: scale(1); }
 }
 
-/* CABEÇALHO DO MODAL */
+
 .modal-header {
     height: 45px;
     border-bottom: 1px solid #dbdbdb;
@@ -46,10 +46,10 @@
 .modal-header h3 {
     font-size: 16px;
     font-weight: 600;
-    color: #1d3b56; /* Azul escuro padrão */
+    color: #1d3b56; 
     margin: 0;
     
-    /* FONTE TÍTULO: Poppins */
+    
     font-family: 'Poppins', sans-serif;
 }
 
@@ -79,27 +79,25 @@
     gap: 20px;
 }
 
-/* Imagem central */
 .icon-midia img {
     width: 100px;
     height: auto;
     margin-bottom: 10px;
 }
 
-/* Texto de instrução */
+
 .texto-instrucao {
     font-size: 20px;
-    font-weight: 300; /* Light */
+    font-weight: 300;
     color: #1d3b56;
     margin: 0;
     
-    /* FONTE TEXTO: Inter */
+    
     font-family: 'Inter', sans-serif;
 }
 
-/* BOTÃO AZUL/VERDE */
 .btn-selecionar {
-    /* Cor padrão do site */
+    
     background-color: #239197; 
     color: white;
     border: none;
@@ -109,7 +107,7 @@
     font-weight: 600;
     cursor: pointer;
     
-    /* FONTE BOTÃO: Inter */
+    
     font-family: 'Inter', sans-serif;
     transition: background 0.3s;
 }

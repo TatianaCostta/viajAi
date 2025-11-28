@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-// Importe o modal que acabamos de criar
 import { ModalCriarPostComponent } from '../modal-criar-post/modal-criar-post';
 
 @Component({
@@ -12,7 +11,7 @@ import { ModalCriarPostComponent } from '../modal-criar-post/modal-criar-post';
   styleUrls: ['./menu-nav.css']
 })
 export class MenuNavComponent {
-    // Variável de controle
+   
     mostrarModal = false;
 
     abrirModal() {
